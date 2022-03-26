@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/roundd"
+        app:cardCornerRadius="20dp">
+
+        <TextView
+            android:id="@+id/phonetext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone number"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/countryCodeHolder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phonetext"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_rememberLastSelection="true"
+            android:layout_marginTop="2dp"
+            app:ccp_textSize="20sp" />
+
+        <EditText
+            android:id="@+id/phonenum"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phonetext"
+            android:layout_alignBottom="@id/countryCodeHolder"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/countryCodeHolder"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/messText"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phonenum"
+            android:layout_marginTop="10dp"
+            android:hint="Message"
+            android:minHeight="48dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/messSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/messText"
+            android:layout_marginTop="5dp"
+            android:text="Send message via"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/radiok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/messSend"
+            android:layout_marginTop="10dp">
+
+            <RadioButton
+                android:id="@+id/whatsapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="WhatsApp"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/whatsappb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WhatsApp Business"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/gwhatsapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GB WhatsApp"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/radiok"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#512DA8"
+            android:text="Start chat"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
